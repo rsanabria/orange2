@@ -4,4 +4,8 @@ import { AppComponent } from './app.component';
 import {APP_ROUTER_PROVIDERS} from './app.routes';
 
 
-bootstrap(AppComponent,[APP_ROUTER_PROVIDERS, HTTP_PROVIDERS]);
+
+bootstrap(AppComponent,[
+    APP_ROUTER_PROVIDERS,
+    HTTP_PROVIDERS,
+    ]);

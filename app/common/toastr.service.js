@@ -9,24 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var navbar_component_1 = require('./navbar.component');
-var router_1 = require('@angular/router');
-var toast_service_1 = require('./common/toast.service');
-var AppComponent = (function () {
-    function AppComponent() {
+var ng2_toastr_1 = require('ng2-toastr/ng2-toastr');
+var ToastrService = (function () {
+    function ToastrService(toastr) {
+        this.toastr = toastr;
     }
-    AppComponent.prototype.ngOnInit = function () {
+    ToastrService.prototype.showSuccess = function (msj) {
+        this.toastr.success(msj);
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'orange',
-            template: '<my-nav></my-nav><router-outlet></router-outlet>',
-            directives: [navbar_component_1.OrangeNavBar, router_1.ROUTER_DIRECTIVES],
-            providers: [toast_service_1.ToastService]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ToastrService.prototype.showError = function (msj) {
+        this.toastr.error(msj);
+    };
+    ToastrService.prototype.showWarning = function (msj) {
+        this.toastr.warning(msj);
+    };
+    ToastrService.prototype.showInfo = function (msj) {
+        this.toastr.info(msj);
+    };
+    ToastrService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [ng2_toastr_1.ToastsManager])
+    ], ToastrService);
+    return ToastrService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ToastrService = ToastrService;
+//# sourceMappingURL=toastr.service.js.map

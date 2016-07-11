@@ -10,17 +10,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var angular2_materialize_1 = require('angular2-materialize');
+var toast_service_1 = require('../common/toast.service');
 var LandingComponent = (function () {
-    function LandingComponent() {
+    function LandingComponent(toast) {
+        this.toast = toast;
         this.mensaje = "";
     }
+    LandingComponent.prototype.exito = function () {
+        this.toast.success('Este es un mensaje éxitoso!');
+    };
+    LandingComponent.prototype.error = function () {
+        this.toast.error('Este es un mensaje de error');
+    };
+    LandingComponent.prototype.alerta = function () {
+        this.toast.alert('Este es un mensaje de alerta');
+    };
+    LandingComponent.prototype.info = function () {
+        this.toast.info('Este es un mensaje informativo');
+    };
     LandingComponent = __decorate([
         core_1.Component({
             selector: 'landing',
             templateUrl: 'app/landing/landing.html',
             directives: [angular2_materialize_1.MaterializeDirective]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [toast_service_1.ToastService])
     ], LandingComponent);
     return LandingComponent;
 }());

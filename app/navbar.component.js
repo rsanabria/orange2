@@ -21,7 +21,7 @@ var OrangeNavBar = (function () {
         core_1.Component({
             selector: 'my-nav',
             directives: [angular2_materialize_1.MaterializeDirective, router_1.ROUTER_DIRECTIVES],
-            template: "<nav >\n    <div class=\"nav-wrapper\">\n      <a [routerLink]=\"['/']\" class=\"brand-logo\">Ora<strong>ng</strong>e <strong>2.0</strong></a>\n      <ul id=\"nav-mobile\" class=\"right hide-on-med-and-down\">\n\n      </ul>\n    </div>\n                </nav>"
+            template: "<nav >\n    <div class=\"nav-wrapper orange darken-2\">\n      <a [routerLink]=\"['/']\" class=\"brand-logo\">Ora<strong>ng</strong>e <strong>2.0</strong></a>\n      <ul id=\"nav-mobile\" class=\"right hide-on-med-and-down\">\n\n      </ul>\n    </div>\n                </nav>"
         }), 
         __metadata('design:paramtypes', [])
     ], OrangeNavBar);
