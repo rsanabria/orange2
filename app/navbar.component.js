@@ -28,4 +28,5 @@ var OrangeNavBar = (function () {
     return OrangeNavBar;
 }());
 exports.OrangeNavBar = OrangeNavBar;
+
 //# sourceMappingURL=navbar.component.js.map

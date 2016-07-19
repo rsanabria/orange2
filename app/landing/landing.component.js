@@ -30,8 +30,9 @@ var LandingComponent = (function () {
     };
     LandingComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'landing',
-            templateUrl: 'app/landing/landing.html',
+            templateUrl: './landing.html',
             directives: [angular2_materialize_1.MaterializeDirective]
         }), 
         __metadata('design:paramtypes', [toast_service_1.ToastService])
@@ -39,4 +40,5 @@ var LandingComponent = (function () {
     return LandingComponent;
 }());
 exports.LandingComponent = LandingComponent;
+
 //# sourceMappingURL=landing.component.js.map

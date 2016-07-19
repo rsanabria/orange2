@@ -3,8 +3,9 @@ import { MaterializeDirective } from 'angular2-materialize';
 import { ToastService } from '../common/toast.service';
 
 @Component({
+    moduleId: module.id,
     selector : 'landing',
-    templateUrl : 'app/landing/landing.html',
+    templateUrl : './landing.html',
     directives: [MaterializeDirective]
 })
 export class LandingComponent {
