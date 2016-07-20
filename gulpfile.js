@@ -1,7 +1,10 @@
 var gulp = require('gulp'),
     path = require('path'),
     del = require('del'),
+    concat = require('gulp-concat'),
+    flatten = require('gulp-flatten'),
     Builder = require('systemjs-builder'),
+     tsc = require('typescript'),
     ts = require('gulp-typescript'),
     sourcemaps  = require('gulp-sourcemaps');
 
@@ -15,10 +18,20 @@ gulp.task('clean', function () {
   return del('app/**/*');
 });
 
+gulp.task('clean:prod', function () {
+    return del(['dist/**/*','!dist/index.html']);
+})
+
 gulp.task('copy:assets', function() {
     /*'index.html', 'styles.css',*/
   return gulp.src(['src/**/*',  '!src/**/*.ts'], { base : '' })
     .pipe(gulp.dest('app/'))
+});
+gulp.task('copy:assets:prod', function() {
+    /*'index.html', 'styles.css',*/
+  return gulp.src(['src/**/*',  '!src/**/*.ts'], { base : '' })
+   .pipe(flatten())
+    .pipe(gulp.dest('dist/'))
 });
 
 
@@ -37,7 +50,7 @@ gulp.task('ts', () => {
 gulp.task('bundle', function() {
     // optional constructor options
     // sets the baseURL and loads the configuration file
-    var builder = new Builder('', 'systemjs.config.js');
+    var builder = new Builder('', 'systemjs.config.js' );
 
     /*
        the parameters of the below buildStatic() method are:
@@ -46,7 +59,7 @@ gulp.task('bundle', function() {
            - options {}
     */
     return builder
-        .buildStatic(appDev + 'main.js', appProd + 'bundle.js', { minify: false, sourceMaps: true})
+        .buildStatic(appDev + 'main.js', appProd + 'js/app.min.js', { minify: true, sourceMaps: true})
         .then(function() {
             console.log('Build complete');
         })
@@ -56,5 +69,42 @@ gulp.task('bundle', function() {
         });
 });
 
+gulp.task('bundle:libs', function () {
+
+    gulp.src(['node_modules/rxjs/**/*'])
+.pipe(gulp.dest('dist/js/rxjs'));
+
+gulp.src(['node_modules/angular2-materialize/dist/**/*'])
+.pipe(gulp.dest('dist/js/angular2-materialize/'));
+
+gulp.src(['node_modules/materialize-css/dist/**/*'])
+.pipe(gulp.dest('dist/css/materialize'));
+ gulp.src([
+        /*'node_modules/jquery/dist/jquery.min.js',*/
+        /*'node_modules/bootstrap/dist/js/bootstrap.min.js',
+        'node_modules/semantic-ui/dist/semantic.min.js',*/
+        'node_modules/core-js/client/shim.min.js',
+        'node_modules/zone.js/dist/zone.js',
+        'node_modules/reflect-metadata/Reflect.js',
+         'node_modules/systemjs/dist/system.src.js',
+        'node_modules/materialize-css/dist/js/materialize.min.js',
+        'systemjs.config.js',
+      ])
+        .pipe(concat('vendors.min.js'))
+        //.pipe(uglify())
+        .pipe(gulp.dest('dist/js/'));
+
+          gulp.src([
+        'node_modules/core-js/client/shim.min.js.map',
+        'node_modules/reflect-metadata/Reflect.js.map'
+]).pipe(gulp.dest('dist/js'));
+
+        return gulp.src(['node_modules/@angular/**/*'])
+.pipe(gulp.dest('dist/js/@angular'));
+});
+
+
 /** this runs the above in order. uses gulp4 */
-gulp.task('build', gulp.series(['clean','ts', 'copy:assets','bundle']));
+gulp.task('dev', gulp.series(['clean','ts', 'copy:assets']));
+
+gulp.task('build', gulp.series(['clean:prod','ts','copy:assets:prod', 'bundle:libs', 'bundle']));

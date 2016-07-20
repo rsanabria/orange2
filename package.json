@@ -2,12 +2,14 @@
   "name": "orange2",
   "version": "0.1.0",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run build\" \"npm run lite\" ",
+    "start": "concurrently \"npm run dev\" \"npm run lite\" ",
     "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
+    "dev": "gulp dev",
+    "copy": "gulp copy:assets:prod",
     "build": "gulp build",
     "uglify": "uglifyjs --compress --mangle -o  dist/bundle.min.js -- dist/bundle.js "
   },
@@ -34,14 +36,16 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
+    "del": "^2.1.0",
     "gulp": "gulpjs/gulp#4.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-flatten": "^0.3.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.13.6",
     "lite-server": "^2.2.0",
     "path": "^0.12.7",
     "systemjs-builder": "^0.15.23",
     "typescript": "^1.8.10",
-    "typings": "^1.0.4",
-    "del": "^2.1.0"
+    "typings": "^1.0.4"
   }
 }
