@@ -1,8 +1,8 @@
 {
   "name": "orange2",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
-    "start": "concurrently \"npm run dev\" \"npm run lite\" ",
+    "start": "npm run dev && concurrently \"npm run lite\" ",
     "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
@@ -10,8 +10,7 @@
     "typings": "typings",
     "dev": "gulp dev",
     "copy": "gulp copy:assets:prod",
-    "build": "gulp build",
-    "uglify": "uglifyjs --compress --mangle -o  dist/bundle.min.js -- dist/bundle.js "
+    "build": "gulp build"
   },
   "license": "ISC",
   "dependencies": {
