@@ -16,14 +16,12 @@ var store_log_monitor_1 = require('@ngrx/store-log-monitor');
 var AppComponent = (function () {
     function AppComponent() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'orange',
-            template: '<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor><my-nav></my-nav><router-outlet></router-outlet>',
-            directives: [navbar_component_1.OrangeNavBar, router_1.ROUTER_DIRECTIVES],
-            providers: [toast_service_1.ToastService, store_log_monitor_1.StoreLogMonitorComponent]
+            template: '<my-nav></my-nav><router-outlet></router-outlet>  <ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>',
+            directives: [navbar_component_1.OrangeNavBar, router_1.ROUTER_DIRECTIVES, store_log_monitor_1.StoreLogMonitorComponent],
+            providers: [toast_service_1.ToastService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

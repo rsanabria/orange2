@@ -11,22 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var angular2_materialize_1 = require('angular2-materialize');
 var toast_service_1 = require('../common/toast.service');
+var store_1 = require('@ngrx/store');
 var LandingComponent = (function () {
-    function LandingComponent(toast) {
+    function LandingComponent(store, toast) {
+        this.store = store;
         this.toast = toast;
         this.mensaje = "";
+        this.counter = store.select('counter');
     }
-    LandingComponent.prototype.exito = function () {
-        this.toast.success('Este es un mensaje éxitoso!');
+    LandingComponent.prototype.toastr = function (val) {
+        switch (val) {
+            case 0: this.toast.success('Este es un mensaje éxitoso!');
+            case 1: this.toast.error('Este es un mensaje de error');
+            case 2: this.toast.alert('Este es un mensaje de alerta');
+            case 3: this.toast.info('Este es un mensaje informativo');
+        }
     };
-    LandingComponent.prototype.error = function () {
-        this.toast.error('Este es un mensaje de error');
+    LandingComponent.prototype.aumenta = function () {
+        this.store.dispatch({ type: 'INCREMENT' });
     };
-    LandingComponent.prototype.alerta = function () {
-        this.toast.alert('Este es un mensaje de alerta');
-    };
-    LandingComponent.prototype.info = function () {
-        this.toast.info('Este es un mensaje informativo');
+    LandingComponent.prototype.disminuye = function () {
+        this.store.dispatch({ type: 'DECREMENT' });
     };
     LandingComponent = __decorate([
         core_1.Component({
@@ -35,7 +40,7 @@ var LandingComponent = (function () {
             templateUrl: './landing.html',
             directives: [angular2_materialize_1.MaterializeDirective]
         }), 
-        __metadata('design:paramtypes', [toast_service_1.ToastService])
+        __metadata('design:paramtypes', [store_1.Store, toast_service_1.ToastService])
     ], LandingComponent);
     return LandingComponent;
 }());
