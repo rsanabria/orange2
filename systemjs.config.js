@@ -8,13 +8,19 @@
     'app':                        'app', // 'dist',
     '@angular':                   'node_modules/@angular',
     'rxjs':                       'node_modules/rxjs',
+    '@ngrx':                      'node_modules/@ngrx',
     'angular2-materialize':       'node_modules/angular2-materialize'
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'angular2-materialize' :               {main: 'dist/materialize-directive', defaultExtension: 'js'}
+    '@ngrx/core':                 { main: 'index.js',format: 'cjs'},
+    '@ngrx/store':                { main: 'index.js',format: 'cjs'},
+    '@ngrx/effects':              { main: 'index.js',format: 'cjs'},
+    '@ngrx/store-devtools':    { main: 'index.js',format: 'cjs'},
+    '@ngrx/store-log-monitor':    { main: 'index.js',format: 'cjs'},
+    'angular2-materialize' :       {main: 'dist/materialize-directive', defaultExtension: 'js'}
   };
   var ngPackageNames = [
     'common',

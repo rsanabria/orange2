@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var navbar_component_1 = require('./navbar.component');
 var router_1 = require('@angular/router');
 var toast_service_1 = require('./common/toast.service');
+var store_log_monitor_1 = require('@ngrx/store-log-monitor');
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -20,9 +21,9 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'orange',
-            template: '<my-nav></my-nav><router-outlet></router-outlet>',
+            template: '<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor><my-nav></my-nav><router-outlet></router-outlet>',
             directives: [navbar_component_1.OrangeNavBar, router_1.ROUTER_DIRECTIVES],
-            providers: [toast_service_1.ToastService]
+            providers: [toast_service_1.ToastService, store_log_monitor_1.StoreLogMonitorComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

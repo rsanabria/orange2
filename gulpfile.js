@@ -72,17 +72,30 @@ gulp.task('bundle', function() {
 gulp.task('bundle:libs', function () {
 
     gulp.src(['node_modules/rxjs/**/*'])
-.pipe(gulp.dest('dist/js/rxjs'));
+        .pipe(gulp.dest('dist/js/rxjs'));
 
-gulp.src(['node_modules/angular2-materialize/dist/**/*'])
-.pipe(gulp.dest('dist/js/angular2-materialize/'));
+    gulp.src(['node_modules/@ngrx/core/**/*'])
+        .pipe(gulp.dest('dist/js/@ngrx/core'));
 
-gulp.src(['node_modules/materialize-css/dist/**/*'])
-.pipe(gulp.dest('dist/css/materialize'));
- gulp.src([
-        /*'node_modules/jquery/dist/jquery.min.js',*/
-        /*'node_modules/bootstrap/dist/js/bootstrap.min.js',
-        'node_modules/semantic-ui/dist/semantic.min.js',*/
+    gulp.src(['node_modules/@ngrx/store/**/*'])
+        .pipe(gulp.dest('dist/js/@ngrx/store'));
+
+    gulp.src(['node_modules/@ngrx/effects/**/*'])
+        .pipe(gulp.dest('dist/js/@ngrx/effects'));
+
+    gulp.src(['node_modules/@ngrx/store-log-monitor/**/*'])
+        .pipe(gulp.dest('dist/js/@ngrx/store-log-monitor'));
+
+    gulp.src(['node_modules/@ngrx/store-dev-tools/**/*'])
+        .pipe(gulp.dest('dist/js/@ngrx/store-dev-tools'));
+        
+    gulp.src(['node_modules/angular2-materialize/dist/**/*'])
+        .pipe(gulp.dest('dist/js/angular2-materialize/'));
+
+    gulp.src(['node_modules/materialize-css/dist/**/*'])
+        .pipe(gulp.dest('dist/css/materialize'));
+ 
+    gulp.src([
         'node_modules/core-js/client/shim.min.js',
         'node_modules/zone.js/dist/zone.js',
         'node_modules/reflect-metadata/Reflect.js',
