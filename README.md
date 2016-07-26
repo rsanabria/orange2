@@ -6,7 +6,10 @@
 Task List
 - [x] Barra de Nav Básica
 - [x] Landing Básico
-- [ ] Logger Service
-- [ ] FireBase Implementation
+- [x] Logger Service
+- [x] Gulp para minificación
+- [ ] Servicio de autenticación básico
+- [ ] Implementación de rxjs (Store)
+- [ ] Implementación de firebase
 - `Más...Próximamente`
  
