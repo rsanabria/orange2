@@ -1,22 +1,19 @@
-// counter.ts
 import { ActionReducer, Action } from '@ngrx/store';
 
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const RESET = 'RESET';
-
-export const counterReducer: ActionReducer<number> = (state: number = 0, action: Action) => {
-    switch (action.type) {
-        case INCREMENT:
-            return state + 1;
-
-        case DECREMENT:
-            return state - 1;
-
-        case RESET:
-            return 0;
-
-        default:
-            return state;
+export const authReducer = (state = {usuario : '', isLogged: false } , action:Action) => {
+  switch(action.type) {
+    case 'LOG_IN': {
+      return Object.assign({},state,action.payload);
     }
+    case 'LOG_OUT': {
+      return {usuario : '', isLogged: false };/* Object.assign(state,{});*/
+    }
+    case 'LOG_IN_SUCCESS':
+      return { usuario: action.payload.usuario, isLogged: true, ruta: action.payload.ruta }
+    default:
+            return state;
+
+  }
 }
+
+

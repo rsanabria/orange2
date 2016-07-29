@@ -1,16 +1,15 @@
 "use strict";
-exports.INCREMENT = 'INCREMENT';
-exports.DECREMENT = 'DECREMENT';
-exports.RESET = 'RESET';
-exports.counterReducer = function (state, action) {
-    if (state === void 0) { state = 0; }
+exports.authReducer = function (state, action) {
+    if (state === void 0) { state = { usuario: '', isLogged: false }; }
     switch (action.type) {
-        case exports.INCREMENT:
-            return state + 1;
-        case exports.DECREMENT:
-            return state - 1;
-        case exports.RESET:
-            return 0;
+        case 'LOG_IN': {
+            return Object.assign({}, state, action.payload);
+        }
+        case 'LOG_OUT': {
+            return { usuario: '', isLogged: false }; /* Object.assign(state,{});*/
+        }
+        case 'LOG_IN_SUCCESS':
+            return { usuario: action.payload.usuario, isLogged: true, ruta: action.payload.ruta };
         default:
             return state;
     }
