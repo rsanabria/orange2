@@ -23,11 +23,26 @@
     <div class="divider"></div>
   <div class="section">
     <h5>Servico de Toast incluido!</h5>
-    <button class="btn btn-large green" (click)="exito()">Pruebame!</button>
-    <button class="btn btn-large red" (click)="error()">Pruebame!</button>
-    <button class="btn btn-large yellow" (click)="alerta()">Pruebame!</button>
-    <button class="btn btn-large teal" (click)="info()">Pruebame!</button>
+    <button class="btn btn-large green" (click)="toastr(0)">Pruebame!</button>
+    <button class="btn btn-large red" (click)="toastr(1)">Pruebame!</button>
+    <button class="btn btn-large yellow" (click)="toastr(2)">Pruebame!</button>
+    <button class="btn btn-large teal" (click)="toastr(3)">Pruebame!</button>
   </div>
+      <div class="divider"></div>
+  <div class="section">
+    <h5>ngrx store!</h5>
+     <p> Valor : {{counter | async }}</p>
+    <button class="btn btn-large lime" (click)="aumenta()">Aumentar</button>
+    <button class="btn btn-large red" (click)="disminuye()">Disminuir</button>
+  </div>
+      <div class="divider"></div>
+  <div class="section">
+    <h5>Inicio de Sesion</h5>
+    <!--*ngIf="isLogged | async "-->
+      <p  *ngIf="(auth | async)?.isLogged " > Hay un usuario logeado!, <a (click)='logout()' class="text-red">salir</a></p> 
+      <p> <a *ngIf="!(auth | async)?.isLogged" [routerLink]="['/login']">Probar</a></p>
+  </div>
+
 </div>
 
 
