@@ -29,7 +29,7 @@ gulp.task('copy:assets', function() {
 });
 gulp.task('copy:assets:prod', function() {
     /*'index.html', 'styles.css',*/
-  return gulp.src(['src/**/*',  '!src/**/*.ts'], { base : '' })
+  return gulp.src(['app/**/*',  '!src/**/*.js'], { base : '' })
    .pipe(flatten())
     .pipe(gulp.dest('dist/'))
 });
