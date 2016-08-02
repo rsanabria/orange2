@@ -2,7 +2,7 @@
   "name": "orange2",
   "version": "0.2.0",
   "scripts": {
-    "start": "npm run dev && concurrently \"npm run lite\" ",
+    "start": "npm tsc  && concurrently  \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
