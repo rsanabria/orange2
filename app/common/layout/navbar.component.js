@@ -9,23 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var toast_service_1 = require('./common/toast.service');
-var auth_service_1 = require('./common/services/auth.service');
-var route_service_1 = require('./common/services/route.service');
-//import { StoreLogMonitorComponent } from '@ngrx/store-log-monitor';
-var AppComponent = (function () {
-    function AppComponent() {
+var NavBarComponent = (function () {
+    function NavBarComponent() {
     }
-    AppComponent = __decorate([
+    NavBarComponent.prototype.ngOnInit = function () {
+        console.log("prueba2");
+    };
+    NavBarComponent = __decorate([
         core_1.Component({
-            selector: 'orange',
-            template: '<my-nav></my-nav><router-outlet></router-outlet> ',
-            providers: [toast_service_1.ToastService, auth_service_1.AuthService, route_service_1.RouteService]
+            selector: 'my-nav',
+            template: "<nav >\n    <div class=\"nav-wrapper orange darken-2\">\n      <a [routerLink]=\"['/']\" class=\"brand-logo\">Ora<strong>ng</strong>e <strong>2.0</strong></a>\n      <ul id=\"nav-mobile\" class=\"right hide-on-med-and-down\">\n\n      </ul>\n    </div>\n                </nav>"
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], NavBarComponent);
+    return NavBarComponent;
 }());
-exports.AppComponent = AppComponent;
-/*<ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor>*/ 
-//# sourceMappingURL=app.component.js.map
+exports.NavBarComponent = NavBarComponent;
+//# sourceMappingURL=navbar.component.js.map

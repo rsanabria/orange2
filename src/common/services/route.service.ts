@@ -4,6 +4,7 @@ import { Observable }     from 'rxjs/Observable';
 @Injectable()
 export class RouteService {
   public rutaActual:Observable<string>;
+
   constructor (private store:Store<string>) {
     this.rutaActual = store.select<string>('router'); 
   }
@@ -12,4 +13,3 @@ export class RouteService {
     this.store.dispatch({type:'UPDATE_ROUTE', payload : ruta});
   }
 }
-

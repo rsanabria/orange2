@@ -8,12 +8,16 @@ export const authReducer = (state = {usuario : '', isLogged: false } , action:Ac
     case 'LOG_OUT': {
       return {usuario : '', isLogged: false };/* Object.assign(state,{});*/
     }
-    case 'LOG_IN_SUCCESS':
+    case 'LOG_IN_SUCCESS': {
       return { usuario: action.payload.usuario, isLogged: true, ruta: action.payload.ruta }
-    default:
+    }
+    case 'LOG_IN_FAILED': {
+      return { usuario: '', isLogged: false };
+    }
+    default: {
             return state;
+    }
 
   }
 }
-
 

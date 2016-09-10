@@ -1,0 +1,1 @@
+{"version":3,"file":"router.reducer.js","sourceRoot":"","sources":["../../../../src/common/stores/reducers/router.reducer.ts"],"names":[],"mappings":";AAIa,qBAAa,GAA0B,UAAC,KAAkB,EAAE,MAAc;IAAlC,qBAAkB,GAAlB,UAAkB;IACnE,MAAM,CAAC,CAAC,MAAM,CAAC,IAAI,CAAC,CAAC,CAAC;QAClB,KAAK,cAAc;YACf,MAAM,CAAC,MAAM,CAAC,OAAO,CAAC;QAC1B;YACI,MAAM,CAAC,KAAK,CAAC;IACrB,CAAC;AACL,CAAC,CAAA"}

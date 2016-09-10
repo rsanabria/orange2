@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var auth_service_1 = require('../common/auth.service');
-var route_service_1 = require('../common/route.service');
+var auth_service_1 = require('../common/services/auth.service');
+var route_service_1 = require('../common/services/route.service');
 var LogInComponent = (function () {
     function LogInComponent(auth, route) {
         this.auth = auth;
@@ -35,5 +35,4 @@ var LogInComponent = (function () {
     return LogInComponent;
 }());
 exports.LogInComponent = LogInComponent;
-
 //# sourceMappingURL=login.component.js.map

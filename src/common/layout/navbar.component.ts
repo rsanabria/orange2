@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 import { MaterializeDirective } from 'angular2-materialize';
 
 @Component({
     selector: 'my-nav',
-    directives: [MaterializeDirective, ROUTER_DIRECTIVES],
     template:`<nav >
     <div class="nav-wrapper orange darken-2">
       <a [routerLink]="['/']" class="brand-logo">Ora<strong>ng</strong>e <strong>2.0</strong></a>
@@ -15,7 +13,7 @@ import { MaterializeDirective } from 'angular2-materialize';
                 </nav>`
 })
 
-export class OrangeNavBar {
+export class NavBarComponent {
        ngOnInit() {
        console.log("prueba2");
    }

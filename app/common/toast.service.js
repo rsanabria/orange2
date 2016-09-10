@@ -32,5 +32,4 @@ var ToastService = (function () {
     return ToastService;
 }());
 exports.ToastService = ToastService;
-
 //# sourceMappingURL=toast.service.js.map

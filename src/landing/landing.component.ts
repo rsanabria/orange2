@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ROUTER_DIRECTIVES } from "@angular/router";
 import { MaterializeDirective } from 'angular2-materialize';
-import { AuthService } from '../common/auth.service';
+import { AuthService } from '../common/services/auth.service';
 import { ToastService } from '../common/toast.service';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
@@ -9,8 +8,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
     moduleId: module.id,
     selector : 'landing',
-    templateUrl : './landing.html',
-    directives: [MaterializeDirective, ROUTER_DIRECTIVES]
+    templateUrl : './landing.html'
 })
 export class LandingComponent{
     mensaje: string = "";

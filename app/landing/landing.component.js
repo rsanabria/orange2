@@ -9,9 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var angular2_materialize_1 = require('angular2-materialize');
-var auth_service_1 = require('../common/auth.service');
+var auth_service_1 = require('../common/services/auth.service');
 var toast_service_1 = require('../common/toast.service');
 var store_1 = require('@ngrx/store');
 var LandingComponent = (function () {
@@ -44,13 +42,11 @@ var LandingComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'landing',
-            templateUrl: './landing.html',
-            directives: [angular2_materialize_1.MaterializeDirective, router_1.ROUTER_DIRECTIVES]
+            templateUrl: './landing.html'
         }), 
         __metadata('design:paramtypes', [auth_service_1.AuthService, store_1.Store, toast_service_1.ToastService])
     ], LandingComponent);
     return LandingComponent;
 }());
 exports.LandingComponent = LandingComponent;
-
 //# sourceMappingURL=landing.component.js.map
