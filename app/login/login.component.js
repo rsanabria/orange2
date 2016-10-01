@@ -11,18 +11,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var auth_service_1 = require('../common/services/auth.service');
 var route_service_1 = require('../common/services/route.service');
+var usuario = (function () {
+    function usuario() {
+    }
+    return usuario;
+}());
 var LogInComponent = (function () {
     function LogInComponent(auth, route) {
         this.auth = auth;
         this.route = route;
-        this.usuario = {};
+        this.usuario = new usuario();
+        this.error = false;
         route.actualizarRuta('login');
     }
     LogInComponent.prototype.ngOnInit = function () { };
     LogInComponent.prototype.logIn = function () {
+        console.log(this.usuario);
         this.auth.login(this.usuario);
-        if (this.auth.isLogged)
-            this.usuario = {};
+        if (this.auth.isLogged) {
+            this.usuario = new usuario();
+            this.error = false;
+        }
+        else {
+            this.error = true;
+        }
     };
     LogInComponent = __decorate([
         core_1.Component({

@@ -20,7 +20,7 @@ var AuthEffects = (function () {
         this.usuarios = [
             { usuario: 'test',
                 password: 'test@',
-                ruta: '/foros'
+                ruta: ''
             }
         ];
         this.login$ = this.actions$
@@ -29,6 +29,7 @@ var AuthEffects = (function () {
             var u = _this.findUser(info.payload.usuario);
             if (u) {
                 if (u.password === info.payload.password) {
+                    console.log(u);
                     return ({ type: 'LOG_IN_SUCCESS', payload: { usuario: u.usuario, isLogged: true, ruta: u.ruta } });
                 }
             }
@@ -39,7 +40,9 @@ var AuthEffects = (function () {
             .ofType('LOG_IN_SUCCESS')
             .map(function (info) {
             if (info.payload.isLogged) {
-                return _this.router.navigateByUrl(info.payload.ruta);
+                console.log("prueba");
+                _this.router.navigateByUrl(info.payload.ruta);
+                return ({ type: "" });
             }
         });
     }

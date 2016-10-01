@@ -32,7 +32,7 @@ export class AuthService implements OnInit {
   }
   public logout() {
     this.store.dispatch({type: 'LOG_OUT', payload : {}});
-    this.isLogged$.next(false);
+    //this.isLogged$.next(false);
   }
 
 }

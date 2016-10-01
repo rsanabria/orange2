@@ -9,8 +9,7 @@ import { LogInComponent } from './login/login.component';
 
 @Component({
     selector : 'orange',
-    template : '<my-nav></my-nav><router-outlet></router-outlet> ',
-    providers: [ToastService, AuthService, RouteService]
+    template : '<my-nav></my-nav><router-outlet></router-outlet><ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor> '
 })
 
 export class AppComponent {

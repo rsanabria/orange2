@@ -15,7 +15,7 @@ export class AuthEffects {
  private usuarios = [
    {usuario : 'test',
     password: 'test@',
-    ruta: '/foros'
+    ruta: ''
   }
  ];
   constructor(private actions$ : Actions, private router: Router) {}
@@ -32,6 +32,7 @@ export class AuthEffects {
         var u = this.findUser(info.payload.usuario);
         if (u) {
           if (u.password === info.payload.password) {
+            console.log(u);
             return ({type: 'LOG_IN_SUCCESS', payload : { usuario : u.usuario, isLogged: true, ruta : u.ruta }});
           }
         }
@@ -43,7 +44,9 @@ export class AuthEffects {
     .ofType('LOG_IN_SUCCESS')
       .map(info => {
         if (info.payload.isLogged) {
-          return this.router.navigateByUrl(info.payload.ruta);  
+          console.log("prueba");
+           this.router.navigateByUrl(info.payload.ruta);  
+           return ({type:""});
         }
       } );
 

@@ -23,10 +23,14 @@ export class LandingComponent{
     public toastr (val: number) {
         switch (val)  {
             case 0 : this.toast.success('Este es un mensaje éxitoso!');
+                     break;
             case 1 : this.toast.error('Este es un mensaje de error');
+                        break;
             case 2 : this.toast.alert('Este es un mensaje de alerta');
+                    break;
             case 3 : this.toast.info('Este es un mensaje informativo'); 
-        }
+                    break;
+    }
     }
 
     public aumenta () {
@@ -39,3 +43,7 @@ export class LandingComponent{
         this.authS.logout();
     }
 }
+
+/*export class LandingComponent{
+    constructor(){}
+}*/

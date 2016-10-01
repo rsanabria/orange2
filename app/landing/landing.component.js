@@ -23,10 +23,18 @@ var LandingComponent = (function () {
     }
     LandingComponent.prototype.toastr = function (val) {
         switch (val) {
-            case 0: this.toast.success('Este es un mensaje éxitoso!');
-            case 1: this.toast.error('Este es un mensaje de error');
-            case 2: this.toast.alert('Este es un mensaje de alerta');
-            case 3: this.toast.info('Este es un mensaje informativo');
+            case 0:
+                this.toast.success('Este es un mensaje éxitoso!');
+                break;
+            case 1:
+                this.toast.error('Este es un mensaje de error');
+                break;
+            case 2:
+                this.toast.alert('Este es un mensaje de alerta');
+                break;
+            case 3:
+                this.toast.info('Este es un mensaje informativo');
+                break;
         }
     };
     LandingComponent.prototype.aumenta = function () {
@@ -49,4 +57,7 @@ var LandingComponent = (function () {
     return LandingComponent;
 }());
 exports.LandingComponent = LandingComponent;
+/*export class LandingComponent{
+    constructor(){}
+}*/ 
 //# sourceMappingURL=landing.component.js.map

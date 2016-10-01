@@ -13,8 +13,10 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var store_1 = require('@ngrx/store');
-var auth_effect_1 = require('./common/stores/effects/auth.effect');
 var effects_1 = require('@ngrx/effects');
+var store_devtools_1 = require('@ngrx/store-devtools');
+var store_log_monitor_1 = require('@ngrx/store-log-monitor');
+var auth_effect_1 = require('./common/stores/effects/auth.effect');
 var app_routes_1 = require('./app.routes');
 var auth_service_1 = require('./common/services/auth.service');
 var route_service_1 = require('./common/services/route.service');
@@ -25,6 +27,7 @@ var landing_component_1 = require('./landing/landing.component');
 var login_component_1 = require('./login/login.component');
 var auth_reducer_1 = require('./common/stores/reducers/auth.reducer');
 var router_reducer_1 = require('./common/stores/reducers/router.reducer');
+var counter_reducer_1 = require('./common/stores/reducers/counter.reducer');
 var angular2_materialize_1 = require('angular2-materialize');
 var AppModule = (function () {
     function AppModule() {
@@ -37,8 +40,15 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 app_routes_1.routing,
+                store_1.StoreModule.provideStore({ router: router_reducer_1.routerReducer, auth: auth_reducer_1.authReducer, counter: counter_reducer_1.counterReducer }, { router: '', counter: 0 }),
                 effects_1.EffectsModule.runAfterBootstrap(auth_effect_1.AuthEffects),
-                store_1.StoreModule.provideStore({ router: router_reducer_1.routerReducer, auth: auth_reducer_1.authReducer }, { router: '' }),
+                store_devtools_1.StoreDevtoolsModule.instrumentStore({
+                    monitor: store_log_monitor_1.useLogMonitor({
+                        visible: true,
+                        position: 'right'
+                    })
+                }),
+                store_log_monitor_1.StoreLogMonitorModule
             ],
             providers: [auth_service_1.AuthService, route_service_1.RouteService, toast_service_1.ToastService],
             bootstrap: [app_component_1.AppComponent]

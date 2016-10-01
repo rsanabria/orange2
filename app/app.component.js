@@ -9,9 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var toast_service_1 = require('./common/toast.service');
-var auth_service_1 = require('./common/services/auth.service');
-var route_service_1 = require('./common/services/route.service');
 //import { StoreLogMonitorComponent } from '@ngrx/store-log-monitor';
 var AppComponent = (function () {
     function AppComponent() {
@@ -19,8 +16,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'orange',
-            template: '<my-nav></my-nav><router-outlet></router-outlet> ',
-            providers: [toast_service_1.ToastService, auth_service_1.AuthService, route_service_1.RouteService]
+            template: '<my-nav></my-nav><router-outlet></router-outlet><ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor> '
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

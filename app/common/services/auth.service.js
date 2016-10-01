@@ -33,7 +33,7 @@ var AuthService = (function () {
     };
     AuthService.prototype.logout = function () {
         this.store.dispatch({ type: 'LOG_OUT', payload: {} });
-        this.isLogged$.next(false);
+        //this.isLogged$.next(false);
     };
     AuthService = __decorate([
         core_1.Injectable(), 
