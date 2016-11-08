@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Rx';
 })
 export class LandingComponent{
     mensaje: string = "";
-    counter;
+    public counter;
     public auth;
     public isLogged:boolean;
     constructor( private authS: AuthService, private store : Store<any>, private toast : ToastService) { 

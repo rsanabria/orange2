@@ -1,6 +1,7 @@
 // counter.ts
 import { ActionReducer, Action } from '@ngrx/store';
 
+
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
