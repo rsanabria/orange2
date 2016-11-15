@@ -44,7 +44,7 @@
       },
     '@ngrx/core': { main: 'bundles/core.umd.js',format: 'cjs'},
     '@ngrx/store':                {main: 'bundles/store.umd.js',format: 'cjs'},
-    '@ngrx/effects':              { main: 'index.js',format: 'cjs'},
+    '@ngrx/effects':              { main: 'bundles/effects.umd.js',format: 'cjs'},
     '@ngrx/store-devtools':       { main: 'bundles/store-devtools.umd.js',format: 'cjs'},
     '@ngrx/store-log-monitor':    { main: 'bundles/store-log-monitor.umd.js',format: 'cjs'},
   }
