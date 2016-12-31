@@ -5,6 +5,7 @@ Dependecies:
  - Webpack
  - Ngrx
  - Materializecss
+ 
  ***
  Current features:
   - [x] Own Alert Service using materializecss
