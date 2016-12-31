@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="blue-text">Orange2 con webpack</h1>
+    <h2>Materialize Css</h2>
+    <h2>Mensajes tipo Toastr</h2>
+    <button class="waves-effect waves-light btn green" (click)="toast('success')">success</button>
+    <button class="waves-effect waves-light btn red" (click)="toast('error')">error</button>
+    <button class="waves-effect waves-light btn yellow" (click)="toast('alert')">alert</button>
+    <button class="waves-effect waves-light btn blue" (click)="toast('info')">info</button>
+    <h2>Ngrx Store</h2>
+     <p> Valor : {{counter | async }}</p>
+     <button class="btn" (click)="counterActions('aumentar')">Aumenta</button>
+     <button class="btn" (click)="counterActions('disminuir')">Disminuye</button>
+     <button class="btn" (click)="counterActions('restart')">Restart</button>
+</div>
