@@ -1,6 +1,6 @@
 {
     "name": "orange2",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Orange2 con webpack",
     "scripts": {
         "start": "webpack-dev-server --inline --progress --port 8080",
@@ -35,11 +35,13 @@
         "@types/node": "^6.0.45",
         "angular2-template-loader": "^0.4.0",
         "awesome-typescript-loader": "^2.2.4",
+        "copy-webpack-plugin": "^4.0.1",
         "css-loader": "^0.23.1",
         "extract-text-webpack-plugin": "^1.0.1",
         "file-loader": "^0.8.5",
         "html-loader": "^0.4.3",
         "html-webpack-plugin": "^2.15.0",
+        "imagemin-webpack-plugin": "^1.4.4",
         "jasmine-core": "^2.4.1",
         "null-loader": "^0.1.1",
         "phantomjs-prebuilt": "^2.1.7",

@@ -10,5 +10,4 @@ Dependecies:
  Current features:
   - [x] Own Alert Service using materializecss
   - [x] Login using Ngrx (store, effects)
-  - [ ] More coming soon...
   

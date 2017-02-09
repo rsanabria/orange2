@@ -39,7 +39,7 @@ export class AuthEffects {
     @Effect() logout$ = this.actions$
         .ofType('LOG_OUT')
             .map(info => {
-                this.router.navigateByUrl('/');
+                this.router.navigateByUrl('/login');
                 return {type:''}
             });
        
