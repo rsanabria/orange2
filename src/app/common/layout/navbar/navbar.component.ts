@@ -27,13 +27,11 @@ export class NavBarComponent {
     auth.isLogged$.subscribe(islogged => {
       this.islogged = islogged;
       if (islogged) {
-        console.log(auth.user);
         this.user = auth.user;
       }
     })
   }
   ngOnInit() {
-    console.log("prueba2");
   }
 
   logOut () {

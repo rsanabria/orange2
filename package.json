@@ -3,7 +3,7 @@
     "version": "1.0.1",
     "description": "Orange2 con webpack",
     "scripts": {
-        "start": "webpack-dev-server --inline --progress --port 8080",
+        "start": "webpack-dev-server --inline --progress --port 8181",
         "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
     },
     "license": "MIT",
@@ -26,12 +26,13 @@
         "hammerjs": "^2.0.8",
         "jquery": "^2.2.4",
         "materialize-css": "^0.97.8",
+        "ng2-webstorage": "^1.5.0",
         "rxjs": "5.0.1",
         "velocity-animate": "^1.4.0",
         "zone.js": "^0.7.4"
     },
     "devDependencies": {
-        "@types/jasmine": "^2.5.35",
+        "@types/jasmine": "2.5.41",
         "@types/node": "^6.0.45",
         "angular2-template-loader": "^0.4.0",
         "awesome-typescript-loader": "^2.2.4",

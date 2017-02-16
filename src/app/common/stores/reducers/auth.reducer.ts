@@ -1,6 +1,7 @@
 import { ActionReducer, Action } from '@ngrx/store';
+import { SessionStorage } from 'ng2-webstorage';
+export const authReducer = (state = { user: '', isLogged: false}, action:Action) => {
 
-export const authReducer = (state = {user : '', isLogged: false } , action:Action) => {
   switch(action.type) {
     case 'LOG_IN': {
       return Object.assign({},state,action.payload);
@@ -14,7 +15,11 @@ export const authReducer = (state = {user : '', isLogged: false } , action:Actio
     case 'LOG_IN_FAILED': {
       return { user: '', isLogged: false };
     }
+    case 'RESTORE_SESSION': {
+      return {user: action.payload, isLogged: true };
+    }
     default: {
+      console.log(state);
             return state;
     }
 
