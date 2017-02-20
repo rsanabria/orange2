@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { LogInComponent } from './login/login.component';
 
-import { LogInGuard } from './common/login.guard';
+import { LogInGuard } from './common/services/login.guard';
 
 const routes: Routes = [ 
    { path: '', component:  LandingComponent,  canActivate : [LogInGuard] },
