@@ -12,4 +12,4 @@ Dependecies:
   - [x] Own Alert Service using materializecss
   - [x] Login using Ngrx (store, effects)
   - [x] Basic session persistance using SessionStorage
-  
+  - [x] Big modules 
