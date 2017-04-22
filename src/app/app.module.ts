@@ -11,7 +11,6 @@
 
 //3rd parties
     import { MaterializeDirective } from "angular2-materialize";
-    import { StoreLogMonitorModule } from '@ngrx/store-log-monitor';
     import { Ng2Webstorage } from 'ng2-webstorage';
 
     @NgModule({
@@ -20,7 +19,6 @@
         ReactiveFormsModule,
         routing,
         MyCommonModule,
-        StoreLogMonitorModule,
         Ng2Webstorage
       ],
       declarations: [

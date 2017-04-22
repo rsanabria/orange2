@@ -13,3 +13,4 @@ Dependecies:
   - [x] Login using Ngrx (store, effects)
   - [x] Basic session persistance using SessionStorage
   - [x] Big modules 
+  - [x] Angular 4.0

@@ -9,17 +9,13 @@ import { AuthEffects } from './effects/auth.effect';
 import { Store, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import {  useLogMonitor } from '@ngrx/store-log-monitor';
 
 @NgModule({
     imports: [
         EffectsModule.runAfterBootstrap(AuthEffects),
         StoreModule.provideStore({ counter: counterReducer, auth : authReducer, router: routerReducer },{router: '/'}),
-        StoreDevtoolsModule.instrumentStore({
-          monitor: useLogMonitor({
-            visible: true,
-            position: 'right'
-            })
+        StoreDevtoolsModule.instrumentOnlyWithExtension({
+            maxAge: 5
         })
     ],
     exports: [],
