@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { ToastService } from '../common/services/toast.service';
-import { RouterService } from '../common/services/router.service';
+import { ToastService } from '../shared/services/toast.service';
+import { RouterService } from '../shared/services/router.service';
 @Component({
     templateUrl: 'landing.component.html'
 })

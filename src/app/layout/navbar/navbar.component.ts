@@ -1,8 +1,6 @@
 
 import { Component } from '@angular/core';
-import { MaterializeDirective } from 'angular2-materialize';
-
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'my-nav',

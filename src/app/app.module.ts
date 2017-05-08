@@ -7,8 +7,8 @@
     import { LogInComponent } from './login/login.component';
     import { routing } from './app.routes';
 //Own Modules
-    import { MyCommonModule } from './common/common.module';
-
+    import { SharedModule } from './shared/shared.module';
+    import { LayOutModule } from './layout/layout.component';
 //3rd parties
     import { MaterializeDirective } from "angular2-materialize";
     import { Ng2Webstorage } from 'ng2-webstorage';
@@ -18,7 +18,8 @@
         BrowserModule, 
         ReactiveFormsModule,
         routing,
-        MyCommonModule,
+        SharedModule,
+        LayOutModule,
         Ng2Webstorage
       ],
       declarations: [

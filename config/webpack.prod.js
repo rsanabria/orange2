@@ -15,14 +15,13 @@ module.exports = webpackMerge(commonConfig, {
         filename: '[name].[hash].js',
         chunkFilename: '[id].[hash].chunk.js'
     },
-
-    htmlLoader: {
-        minimize: false // workaround for ng2
-    },
+    /*
+        htmlLoader: {
+            minimize: false // workaround for ng2
+        },*/
 
     plugins: [
-        new webpack.NoErrorsPlugin(),
-        new webpack.optimize.DedupePlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
             mangle: {
                 screw_ie8: true,
@@ -34,10 +33,11 @@ module.exports = webpackMerge(commonConfig, {
             'process.env': {
                 'ENV': JSON.stringify(ENV)
             }
-        }),
-        new CopyWebpackPlugin([{
-            from: 'public/images',
-            to: 'public/images'
-        }])
+        })
+        /*,
+                new CopyWebpackPlugin([{
+                    from: 'public/images',
+                    to: 'public/images'
+                }])*/
     ]
 });

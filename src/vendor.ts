@@ -10,11 +10,10 @@
     import '@ngrx/effects';
     import '@ngrx/store';
     import '@ngrx/store-devtools';
-    import '@ngrx/store-log-monitor';
     // RxJS
     import 'rxjs';
 
-/*    import 'materialize-css';*/
+    import 'materialize-css';
     import 'materialize-css/dist/js/materialize.min.js';
     import 'materialize-css/dist/css/materialize.min.css';
     import 'angular2-materialize';

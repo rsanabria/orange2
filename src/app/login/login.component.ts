@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../common/services/auth.service';
-import { RouterService } from '../common/services/router.service';
+import { AuthService } from '../shared/services/auth.service';
+import { RouterService } from '../shared/services/router.service';
 
-import { User } from '../common/interfaces/user.login';
+import { User } from '../shared/interfaces/user.login';
 
 @Component({
     selector: 'login',

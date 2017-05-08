@@ -1,12 +1,12 @@
 
 import { ModuleWithProviders }  from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { LogInComponent } from './login/login.component';
 
-import { LogInGuard } from './common/services/login.guard';
+import { LogInGuard } from './shared/services/login.guard';
 
 const routes: Routes = [ 
    { path: '', component:  LandingComponent,  canActivate : [LogInGuard] },
@@ -19,5 +19,7 @@ const routes: Routes = [
 ];
 
 export const routing: ModuleWithProviders =
-  RouterModule.forRoot(routes)
+  RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })
 ;
