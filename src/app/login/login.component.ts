@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { RouterService } from '../shared/services/router.service';
 
@@ -12,11 +12,11 @@ import { User } from '../shared/interfaces/user.login';
 export class LogInComponent implements OnInit {
     user : FormGroup;
     error : boolean = false;
-    constructor(private auth : AuthService, private route : RouterService) { }
+    constructor(private fb : FormBuilder, private auth : AuthService, private route : RouterService) { }
 
     ngOnInit() { 
         this.route.actualizarRuta('/login');
-        this.user = new FormGroup( {
+        this.user =  this.fb.group( {
             user :  new FormControl('',[Validators.required]),
             passwd : new FormControl('',[Validators.required])
         });

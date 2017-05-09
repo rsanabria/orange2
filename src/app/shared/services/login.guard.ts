@@ -22,7 +22,6 @@ export class LogInGuard implements CanActivate {
       if (this.auth.isLogged) {
         return true;
       } else {
-        console.log("GUARD", this.auth.isLogged);
         // Store the attempted URL for redirecting
         //this.authService.redirectUrl = state.url;
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 
 import { ToastService } from '../shared/services/toast.service';
 import { RouterService } from '../shared/services/router.service';
@@ -8,9 +7,8 @@ import { RouterService } from '../shared/services/router.service';
 })
 export class LandingComponent implements OnInit {
     public counter: any;
-    constructor(private toastS : ToastService, private router : RouterService, private store : Store<any>) { 
+    constructor(private toastS : ToastService, private router : RouterService) { 
         this.router.actualizarRuta('/');
-        this.counter = store.select('counter');
     }
 
     ngOnInit() { }
@@ -33,19 +31,4 @@ export class LandingComponent implements OnInit {
                 break;
         }
     }
-
-    public counterActions (action:string) {
-        switch (action) {
-            case 'aumentar' : 
-                this.store.dispatch({type : 'INCREMENT'});
-                break;
-            case 'disminuir' : 
-                this.store.dispatch({type: 'DECREMENT'});
-                break;
-            case 'restart' :
-                this.store.dispatch({type: 'RESET'});
-                break;
-        }
-    }
-
 }

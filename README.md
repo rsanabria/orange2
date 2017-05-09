@@ -14,3 +14,4 @@ Dependecies:
   - [x] Basic session persistance using SessionStorage
   - [x] Big modules 
   - [x] Angular 4.0
+  - [x] Routing persistance using SessionStorage

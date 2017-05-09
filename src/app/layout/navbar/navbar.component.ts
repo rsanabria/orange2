@@ -10,7 +10,7 @@ import { AuthService } from '../../shared/services/auth.service';
       <ul id="nav-mobile" class="right hide-on-med-and-down">
        <li> <a *ngIf="!islogged" [routerLink]="['login']">LOGIN</a></li>
        <div *ngIf="islogged">
-       <li> <a [routerLink]="['login']">{{user | uppercase }}</a></li>
+       <li> <a [routerLink]="['login']">{{user.name | uppercase }}</a></li>
         <li><a (click)="logOut()">LOGOUT</a></li>
         </div>
       </ul>

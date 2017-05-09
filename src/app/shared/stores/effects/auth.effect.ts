@@ -34,7 +34,7 @@ export class AuthEffects {
                 var u = this.findUser(info.payload.user);
                 if (u) {
                     if (u.passwd === info.payload.passwd) {
-                        return ({type: 'LOG_IN_SUCCESS', payload : { user : u.user, isLogged: true, ruta : u.ruta }});
+                        return ({type: 'LOG_IN_SUCCESS', payload : { user : {name : u.user, ruta: u.ruta}, isLogged: true, ruta : u.ruta }});
                     }
                 }
                 return ({type: 'LOG_IN_FAILED', payload : { user : '', isLogged: false }});
@@ -45,6 +45,7 @@ export class AuthEffects {
             .map(info => {
                 this.router.navigateByUrl('/login');
                 this.session.clear('userStored');
+                this.session.clear('route');
             });
        
     @Effect({dispatch: false}) login_success$ = this.actions$
@@ -58,7 +59,7 @@ export class AuthEffects {
     @Effect({dispatch: false}) restore_session$ = this.actions$
         .ofType('RESTORE_SESSION')
             .map(info => {
-                    this.router.navigateByUrl('/');
+                    this.router.navigateByUrl(this.session.retrieve("route"));
                 /*insert server logic*/
             })
 

@@ -5,6 +5,7 @@
     import { AppComponent } from './app.component';
     import { LandingComponent } from './landing/landing.component';
     import { LogInComponent } from './login/login.component';
+    import { NgrxDashBoardComponent } from './ngrx/dashboard.component';
     import { routing } from './app.routes';
 //Own Modules
     import { SharedModule } from './shared/shared.module';
@@ -26,6 +27,7 @@
         AppComponent,
         LandingComponent,
         LogInComponent,
+        NgrxDashBoardComponent,
         MaterializeDirective
       ],
       providers : [],
